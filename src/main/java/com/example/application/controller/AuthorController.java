@@ -33,6 +33,56 @@ public class AuthorController {
         param.put("rows", authorList);
         return param;
     }
+
+    /**
+     * 查询用户信息
+     * */
+    @RequestMapping(value = "/{userId:\\d+}",method = RequestMethod.GET)
+    public Author getAuthor(@PathVariable Long userId,HttpServletRequest request){
+
+        Author author = this.authorService.findAuthor(userId);
+        if (author == null) {
+            throw new RuntimeException("查询错误");
+        }
+        return author;
+    }
+
+    /**
+     * 新增方法
+     */
+    @RequestMapping(method = RequestMethod.POST)
+    public int add(@RequestBody Author author){
+        int effectRow = 0;
+
+        if (author != null) {
+            try {
+                effectRow = this.authorService.add(author);
+            } catch (Exception e) {
+                e.printStackTrace();
+                throw new RuntimeException("新增错误");
+            }
+        }
+        return effectRow;
+    }
+
+    /**
+     * 更新方法
+     */
+    @RequestMapping(value = "/{userId:\\d+}",method = RequestMethod.PUT)
+    public int update (@PathVariable Long userId,@RequestBody Author author){
+        int effectRow = 0;
+        if (author != null) {
+            author.setId(userId);
+            try {
+                effectRow = this.authorService.update(author);
+            } catch (Exception e) {
+                e.printStackTrace();
+                throw new RuntimeException("更新错误");
+            }
+        }
+        return effectRow;
+    }
+
     /**
      * 删除方法
      */
