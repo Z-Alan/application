@@ -3,6 +3,8 @@ package com.example.application.controller;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static org.junit.Assert.*;
 
@@ -14,6 +16,14 @@ public class AuthorControllerTest extends BaseControllerTest {
 
     @Test
     public void getAuthorListTest() {
+        try {
+            mockMvc.perform(MockMvcRequestBuilders.get("/author"))
+                    .andExpect(MockMvcResultMatchers.status().isOk())
+            //.andExpect(MockMvcResultMatchers.content().string("365"));  //测试接口返回内容
+            ;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
