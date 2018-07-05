@@ -42,11 +42,13 @@
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
 
+        <!--添加mysql 驱动依赖 -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.35</version>
         </dependency>
+        <!--添加alibaba druid数据连接池管理 依赖 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
