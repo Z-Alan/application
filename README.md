@@ -1,20 +1,20 @@
 # Application
-这是一个springboot的练习项目，用于记录自己在学习springboot的过程记录。
+这是一个Spring boot的练习项目，用于记录自己在学习Spring boot的过程记录。
 
 ## Spring boot快速入门
-本例使用Spring Initlizar构建的demo
-1. 使用Spring Initlizar 官网构建一个新项目
-2. 使用IDEA构建一个Spring Initlizar 工程【推荐】
-3. 代码请看`dev-quick-start`分支
+本例使用Spring Initializr构建的demo
+* 使用Spring Initializr 官网构建一个新项目 | http://start.spring.io/
+* 使用IDEA构建一个Spring Initializr 工程【推荐】
+* 代码请看`dev-quick-start`分支
 ## 日志系统
 使用默认日志logback
 ### log-logback-自动配置
-1. 代码请看`log-logback`分支
+* 代码请看`log-logback`分支
 
 ## 数据存储篇
 
 ### 使用JdbcTemplate
-data-storage-jdbc
+* 代码请看`data-storage-jdbc`
 
 ### 使用Mybatis
 #### xml式Mybatis
