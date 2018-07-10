@@ -36,6 +36,7 @@ public class AuthorServiceImplTest extends BaseServiceTest {
         author.setNickName("更远的以后");
         author.setRealName("周牧");
         row = authorService.update(author);
+//        row = authorService.update(null);
         assertEquals(1,row);
     }
 
