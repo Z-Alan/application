@@ -25,7 +25,7 @@ public class AuthorServiceImpl implements AuthorService {
 
     @Override
     public int add(Author author) {
-        LOGGER.info("[- 入参 -]添加作者信息 --- [- {} -]", author);
+        LOGGER.info("[- 入参 -] 添加作者信息 --- [- {} -]", author);
         return this.authorDAO.add(author);
     }
 
