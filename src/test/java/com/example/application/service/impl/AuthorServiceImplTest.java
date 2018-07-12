@@ -18,8 +18,8 @@ public class AuthorServiceImplTest extends BaseServiceTest {
     @Test
     public void addTest() {
         Author author = new Author();
-        author.setNickName("对方正在输入...");
-        author.setRealName("zz");
+        author.setNickName("格子先生i");
+        author.setRealName("格子");
         int row = authorService.add(author);
         assertEquals(1,row);
     }
