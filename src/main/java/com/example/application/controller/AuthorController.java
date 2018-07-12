@@ -2,6 +2,8 @@ package com.example.application.controller;
 
 import com.example.application.model.Author;
 import com.example.application.service.AuthorService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +20,8 @@ import java.util.Map;
 @RestController
 @RequestMapping("/author")
 public class AuthorController {
+    
+    private static final Logger LOGGER = LoggerFactory.getLogger(AuthorController.class);
 
     @Autowired
     private AuthorService authorService;
@@ -42,7 +46,7 @@ public class AuthorController {
 
         Author author = this.authorService.findAuthor(userId);
         if (author == null) {
-            throw new RuntimeException("查询错误");
+            LOGGER.info("[- 错误 -] 获取author资源 --- [- {} -]","查询为空");
         }
         return author;
     }
@@ -58,8 +62,7 @@ public class AuthorController {
             try {
                 effectRow = this.authorService.add(author);
             } catch (Exception e) {
-                e.printStackTrace();
-                throw new RuntimeException("新增错误");
+                LOGGER.error("[- 异常 -] 添加作者 --- 异常类型 : [- {} -] --- 堆栈信息 : [- {} -]",e,e.getStackTrace());
             }
         }
         return effectRow;
@@ -76,8 +79,7 @@ public class AuthorController {
             try {
                 effectRow = this.authorService.update(author);
             } catch (Exception e) {
-                e.printStackTrace();
-                throw new RuntimeException("更新错误");
+               LOGGER.error("[- 异常 -] 更新 --- 异常类型 : [- {} -] --- 堆栈信息 : [- {} -]",e,e.getStackTrace());
             }
         }
         return effectRow;
@@ -91,7 +93,8 @@ public class AuthorController {
         try{
             this.authorService.delete(userId);
         }catch(Exception e){
-            throw new RuntimeException("删除错误");
+            LOGGER.error("[- 异常 -] 删除 --- 异常类型 : [- {} -] --- 堆栈信息 : [- {} -]",e,e.getStackTrace());
         }
     }
+
 }

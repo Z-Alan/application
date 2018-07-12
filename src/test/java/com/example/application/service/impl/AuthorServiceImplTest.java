@@ -52,6 +52,18 @@ public class AuthorServiceImplTest extends BaseServiceTest {
     @Test
     public void findAuthorListTest() {
         List<Author> authorList = authorService.findAuthorList();
-        assertEquals(3,authorList.size());
+        assertEquals(5,authorList.size());
+    }
+
+    @Test
+    public void findAuthorsByRealNameTest() {
+        List<Author> authors = authorService.findAuthorsByRealName("周牧");
+        assertEquals(1,authors.size());
+    }
+
+    @Test
+    public void findAuthorByRealNameAndNickNmeTest() {
+        Author author = authorService.findAuthorByRealNameAndNickName("周牧","更远的以后new");
+        assertEquals("周牧",author.getRealName());
     }
 }

@@ -2,6 +2,8 @@ package com.example.application.utils;
 
 import com.example.application.model.Author;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Field;
 
@@ -11,6 +13,8 @@ import java.lang.reflect.Field;
  * @date   2018/7/3 13:43
  * */
 public class GenerateMybatisAnnotation {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(GenerateMybatisAnnotation.class);
 
     /**
      * 用于获取结果集的映射关系.
@@ -32,6 +36,6 @@ public class GenerateMybatisAnnotation {
     }
 
     public static void main(String[] args) {
-        System.out.println(GenerateMybatisAnnotation.getResultsStr(Author.class));
+        LOGGER.info("[- 结果集映射 -] Author实体类的结果集映射 --- [- {} -]",GenerateMybatisAnnotation.getResultsStr(Author.class));
     }
 }

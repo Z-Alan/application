@@ -43,4 +43,14 @@ public class AuthorServiceImpl implements AuthorService {
     public List<Author> findAuthorList() {
         return this.authorDAO.findAuthorList();
     }
+
+    @Override
+    public List<Author> findAuthorsByRealName(String realName) {
+        return this.authorDAO.listByRealName(realName);
+    }
+
+    @Override
+    public Author findAuthorByRealNameAndNickName(String realName,String nickName) {
+        return this.authorDAO.selectAuthor(realName,nickName);
+    }
 }
