@@ -20,7 +20,7 @@ public interface AuthorDAO {
      * */
     int add(Author author);
     /**
-     * add.
+     * update.
      * @author       zhouqiang
      * @param        author     作者
      * @return       影响行数     int
@@ -36,7 +36,7 @@ public interface AuthorDAO {
      * */
     int delete(Long id);
     /**
-     * add.
+     * findAuthor.
      * @author       zhouqiang
      * @param        id         作者编号
      * @return       author     Author
@@ -44,7 +44,7 @@ public interface AuthorDAO {
      * */
     Author findAuthor(long id);
     /**
-     * add.
+     * findAuthorList.
      * @author       zhouqiang
      * @return       author     List
      * @date   2018/7/5 10:51
