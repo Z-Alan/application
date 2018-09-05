@@ -36,6 +36,7 @@ public class GenerateMybatisAnnotation {
     }
 
     public static void main(String[] args) {
-        LOGGER.info("[- 结果集映射 -] Author实体类的结果集映射 --- [- {} -]",GenerateMybatisAnnotation.getResultsStr(Author.class));
+        LOGGER.info("[- 结果集映射 -] Author实体类的结果集映射 --- [- {} -]",
+                GenerateMybatisAnnotation.getResultsStr(Author.class));
     }
 }
